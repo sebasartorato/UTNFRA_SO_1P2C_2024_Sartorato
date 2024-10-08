@@ -18,4 +18,4 @@ echo "${DISCO}10  /Examenes-UTN/alumno_3/parcial_3  ext4  defaults  0  0" | sudo
 
 #Profesores
 
-echo "${DISCO}10 /Examenes-UTN/profesores           ext4  defaults  0  2" | sudo tee -a /etc/fstab
+echo "${DISCO}10 /Examenes-UTN/profesores           ext4  defaults  0  0" | sudo tee -a /etc/fstab
