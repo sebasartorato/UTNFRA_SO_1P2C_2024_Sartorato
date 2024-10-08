@@ -3,6 +3,8 @@
 DISCO="/dev/sde"
 PATH_CARPETAS="/Examenes-UTN/alumno_{1..3}/parcial_{1..3},profesores"
 
+#Creo las particiones para el disco de 10 GB
+
 {
 echo n
 echo p
@@ -37,6 +39,6 @@ echo w
 #Muestro resultado
 sudo fdisk -l $DISCO
 
-#Ejecuto el montaje
+#Ejecuto el formateo y el montaje
 
 ./Punto_B_bis.sh

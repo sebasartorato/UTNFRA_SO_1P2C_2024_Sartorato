@@ -2,6 +2,9 @@
 
 DISCO="/dev/sde"
 
+#Ejecuto formateo persistente y luego el montaje 
+
+#Alumno 1
 echo "${DISCO}1  /Examenes-UTN/alumno_1/parcial_1  ext4  defaults  0  0" | sudo tee -a /etc/fstab
 echo "${DISCO}2  /Examenes-UTN/alumno_1/parcial_2  ext4  defaults  0  0" | sudo tee -a /etc/fstab
 echo "${DISCO}3  /Examenes-UTN/alumno_1/parcial_3  ext4  defaults  0  0" | sudo tee -a /etc/fstab
