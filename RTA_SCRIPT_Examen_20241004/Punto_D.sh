@@ -2,13 +2,13 @@
 
 #Creo directorios
 
-sudo mkdir -p $HOME/Estructura_Asimetrica/{correo,clientes}
+sudo mkdir -p $HOME/Estructura_Asimetrica/{correo,cliente}
 
 #Creo archivos de cartas
 for i in {1..100}
 do
         sudo touch $HOME/Estructura_Asimetrica/correo/cartas_$i
-        sudo touch $HOME/Estructura_Asimetrica/clientes/cartas_$i
+        sudo touch $HOME/Estructura_Asimetrica/cliente/cartas_$i
 done
 
 #Creo archivos de carteros para el dir correo
