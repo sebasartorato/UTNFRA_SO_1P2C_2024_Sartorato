@@ -19,6 +19,3 @@ echo "${DISCO}8  /Examenes-UTN/alumno_3/parcial_1  ext4  defaults  0  0" | sudo 
 echo "${DISCO}9  /Examenes-UTN/alumno_3/parcial_2  ext4  defaults  0  0" | sudo tee -a /etc/fstab
 echo "${DISCO}10  /Examenes-UTN/alumno_3/parcial_3  ext4  defaults  0  0" | sudo tee -a /etc/fstab
 
-#Profesores
-
-echo "${DISCO}10 /Examenes-UTN/profesores           ext4  defaults  0  0" | sudo tee -a /etc/fstab

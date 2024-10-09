@@ -36,6 +36,17 @@ done
 echo w
 } | sudo fdisk $DISCO
 
+# Formateo de las particiones
+for i in {1..3}; do 
+    sudo mkfs.ext4 -F ${DISCO}$i 
+done 
+
+# No formatear la partición 4 (extendida)
+
+for i in {5..10}; do 
+    sudo mkfs.ext4 -F ${DISCO}$i 
+done
+
 #Muestro resultado
 sudo fdisk -l $DISCO
 
