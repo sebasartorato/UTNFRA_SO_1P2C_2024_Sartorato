@@ -1,36 +1,56 @@
 #!/bin/bash
 
 SHELL="/bin/bash"
-LISTA=$1
 USER_HASH=$(sudo grep $(whoami) /etc/shadow | awk -F ':' '{print $2}')
 
-ANT_IFS=$IFS
-IFS=$'\n'
 
 #Creo grupos primero
 sudo groupadd p1c2_2024_gAlumno
 sudo groupadd p1c2_2024_gProfesores
 
-#Creo usuarios con sus grupos
-for LINEA in `cat $LISTA | grep -v ^#`
-do
-        USUARIO=$(echo $LINEA | awk -F ':' '{print $1}')
-        GRUPO=$(echo $LINEA | awk -F ':' '{print $2}')
-        echo "Creando usuario: $USUARIO en el grupo: $GRUPO"
-        
-        sudo useradd -m -s $SHELL -p $USER_HASH -G $GRUPO $USUARIO
-done
+#Crear usuarios y asignar grupos
+sudo useradd -m -s $SHELL -p $USER_HASH -G p1c2_2024_gAlumno p1c2_2024_A1
+sudo useradd -m -s $SHELL -p $USER_HASH -G p1c2_2024_gAlumno p1c2_2024_A2
+sudo useradd -m -s $SHELL -p $USER_HASH -G p1c2_2024_gAlumno p1c2_2024_A3
+sudo useradd -m -s $SHELL -p $USER_HASH -G p1c2_2024_gProfesores p1c2_2024_P1
 
-IFS=$ANT_IFS
+
+sudo chmod 755 /Examenes-UTN
 
 sudo chown p1c2_2024_A1:p1c2_2024_A1 /Examenes-UTN/alumno_1
 sudo chmod 750 /Examenes-UTN/alumno_1
+sudo chown p1c2_2024_A1:p1c2_2024_A1 /Examenes-UTN/alumno_1/parcial_1
+sudo chmod 750 /Examenes-UTN/alumno_1/parcial_1
+sudo chown p1c2_2024_A1:p1c2_2024_A1 /Examenes-UTN/alumno_1/parcial_2
+sudo chmod 750 /Examenes-UTN/alumno_1/parcial_2
+sudo chown p1c2_2024_A1:p1c2_2024_A1 /Examenes-UTN/alumno_1/parcial_3
+sudo chmod 750 /Examenes-UTN/alumno_1/parcial_3
 
 sudo chown p1c2_2024_A2:p1c2_2024_A2 /Examenes-UTN/alumno_2
 sudo chmod 760 /Examenes-UTN/alumno_2
 
+sudo chown p1c2_2024_A2:p1c2_2024_A2 /Examenes-UTN/alumno_2/parcial_1
+sudo chmod 760 /Examenes-UTN/alumno_2/parcial_1
+
+sudo chown p1c2_2024_A2:p1c2_2024_A2 /Examenes-UTN/alumno_2/parcial_2
+sudo chmod 760 /Examenes-UTN/alumno_2/parcial_2
+
+sudo chown p1c2_2024_A2:p1c2_2024_A2 /Examenes-UTN/alumno_2/parcial_3
+sudo chmod 760 /Examenes-UTN/alumno_2/parcial_3
+
+
 sudo chown p1c2_2024_A3:p1c2_2024_A3 /Examenes-UTN/alumno_3
 sudo chmod 700 /Examenes-UTN/alumno_3
+
+sudo chown p1c2_2024_A3:p1c2_2024_A3 /Examenes-UTN/alumno_3/parcial_1
+sudo chmod 700 /Examenes-UTN/alumno_3/parcial_1
+
+sudo chown p1c2_2024_A3:p1c2_2024_A3 /Examenes-UTN/alumno_3/parcial_2
+sudo chmod 700 /Examenes-UTN/alumno_3/parcial_2
+
+sudo chown p1c2_2024_A3:p1c2_2024_A3 /Examenes-UTN/alumno_3/parcial_3
+sudo chmod 700 /Examenes-UTN/alumno_3/parcial_3
+
 
 sudo chown p1c2_2024_P1:p1c2_2024_gProfesores /Examenes-UTN/profesores
 sudo chmod 775 /Examenes-UTN/profesores
