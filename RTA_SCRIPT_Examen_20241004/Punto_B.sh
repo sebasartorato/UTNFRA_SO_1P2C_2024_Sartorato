@@ -26,7 +26,7 @@ echo 4
 echo
 echo
 
-for i in {5..10}; do
+for i in {5..11}; do
         echo n
         echo l
         echo
@@ -43,7 +43,7 @@ done
 
 # No formatear la partición 4 (extendida)
 
-for i in {5..10}; do 
+for i in {5..11}; do 
     sudo mkfs.ext4 -F ${DISCO}$i 
 done
 
